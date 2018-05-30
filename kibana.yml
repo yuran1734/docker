@@ -1,7 +1,21 @@
-elasticsearch.username: kibana_x
-elasticsearch.password: kibana_x
-elasticsearch.url: https://localhost:9200
+# Kibana is served by a back end server. This setting specifies the port to use.
+server.port: 5601
+
+# Specifies the address to which the Kibana server will bind. IP addresses and host names are both valid values.
+# The default is 'localhost', which usually means remote machines will not be able to connect.
+# To allow connections from remote users, set this parameter to a non-loopback address.
+server.host: "0.0.0.0"
+
+# Enables SSL and paths to the PEM-format SSL certificate and SSL key files, respectively.
+# These settings enable SSL for outgoing requests from the Kibana server to the browser.
+#server.ssl.enabled: true
+#server.ssl.certificate: /etc/kibana/crt.txt
+#server.ssl.key: /etc/kibana/key.txt
+
+
+elasticsearch.username: elastic
+elasticsearch.password: mDnrUO1hP83GEckMktYdYg0G
+elasticsearch.url: https://de16988f303532c2512d278083393a29.us-east-1.aws.found.io:9243
 elasticsearch.ssl.verificationMode: none
-# Need this for ROR session/cookie expiration (“session_max_idle” in readonlyrest.yml)doc
-#elasticsearch.requestHeadersWhitelist: ['authorization', 'cookie' ]
-#transform_vis.allow_unsafe: true
+elasticsearch.requestHeadersWhitelist: ['authorization', 'cookie' ]
+transform_vis.allow_unsafe: true
